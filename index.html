@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I'm Sorry</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Envelope Section -->
+    <div id="envelope-container">
+        <p class="envelope-message">Here is a message for you...</p>
+        <div class="envelope">
+            <div class="envelope-flap"></div>
+            <div class="envelope-body"></div>
+        </div>
+        <button id="open-envelope-button">Open Envelope</button>
+    </div>
+
+    <!-- Letter Section -->
+    <div id="letter-container" class="hidden">
+        <div class="letter">
+            <p class="letter-content">
+                Hey Sanu, I’m so sorry. <br><br>
+                Ik that things are very much messed up, and I’m really very very very much sorry for this situation…<br><br>
+                I just love you so much, baby. I really really really love you so much. See, Ik that you are tensed about your studies, and I’ll always try my best to not interrupt you with your studies. I will always support you, Sanu, and stand with you as your shadow, baby. <br><br>
+                Please listen to me. The matter is about the family, then we will talk to them and convince them. Woh log mujhe kam se kam ek chance toh denge hi naa. Dekh, Sanu, your mom doesn’t know how I am because all your sister has spoken shit about me to her, but woh mujhe khudko prove karne kaa ek mauka toh denge hi naa baby. Mujhe bas woh ek mauka chahiye to prove myself, Sanu…<br><br>
+                This is our thing, what we manifested, baby, and we can take a stand for this and defend it naa. Do we interrupt anyone else’s relationship like your sister does? Nahi naa, then why should we let her do that? Please just maan jaa mera beba. Please, we will sort things out together. Please, mera baby. <br><br>
+                I really really really love you so much… ❤️
+            </p>
+        </div>
+        <div class="sunflowers">
+            <p class="flower-message">I LOVE YOU SO MUCH,PHOOLKUMARI… 🌻</p>
+        </div>
+    </div>
+
+    <script>
+        // Handle envelope opening
+        document.getElementById('open-envelope-button').addEventListener('click', function () {
+            document.querySelector('.envelope-flap').classList.add('flap-open');
+            setTimeout(() => {
+                document.querySelector('.envelope').classList.add('envelope-open');
+                setTimeout(() => {
+                    document.getElementById('envelope-container').style.display = 'none';
+                    document.getElementById('letter-container').classList.remove('hidden');
+                }, 2000);
+            }, 1000);
+        });
+    </script>
+</body>
+</html>

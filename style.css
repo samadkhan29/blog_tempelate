@@ -1,0 +1,148 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: #f8f1e7;
+    font-family: 'Dancing Script', cursive;
+    color: #5d4037;
+    overflow: hidden;
+}
+
+/* Hidden Class */
+.hidden {
+    display: none;
+}
+
+/* Envelope Section */
+#envelope-container {
+    text-align: center;
+}
+
+.envelope-message {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.envelope {
+    position: relative;
+    width: 300px;
+    height: 150px;
+    background: #c19a6b;
+    border: 2px solid #8b5a2b;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.envelope-flap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 300px;
+    height: 150px;
+    background: #8b5a2b;
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    transition: transform 1s ease-in-out;
+    z-index: 2;
+}
+
+.envelope-body {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #c19a6b;
+    z-index: 1;
+}
+
+/* Envelope Open Animation */
+.flap-open {
+    transform: rotateX(-180deg);
+    transform-origin: top;
+}
+
+.envelope-open {
+    height: 0;
+    transition: height 1s ease-in-out;
+}
+
+/* Button to Open Envelope */
+#open-envelope-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background: #a0522d;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    outline: none;
+    transition: background 0.3s ease;
+}
+
+#open-envelope-button:hover {
+    background: #8b4513;
+}
+
+/* Letter Section */
+#letter-container {
+    text-align: left;
+    margin-top: 20px;
+    animation: fade-in 2s ease-in-out;
+}
+
+.letter {
+    background: #fdf4e3;
+    padding: 30px;
+    border: 2px solid #d2b48c;
+    border-radius: 10px;
+    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.15);
+    width: 300px;
+    max-height: 400px;
+    overflow-y: auto;
+    opacity: 0;
+    animation: unfold 3s ease-out forwards;
+}
+
+.letter-content {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #5d4037;
+    margin-bottom: 20px;
+}
+
+.sunflowers {
+    text-align: center;
+    font-size: 20px;
+    opacity: 0;
+    animation: fade-in 2s ease-in-out 2s forwards;
+}
+
+.sunflowers .flower-message {
+    font-size: 24px;
+    font-weight: bold;
+    color: #5d4037;
+}
+
+/* Unfold Animation */
+@keyframes unfold {
+    0% {
+        opacity: 0;
+        transform: scaleY(0);
+    }
+    100% {
+        opacity: 1;
+        transform: scaleY(1);
+    }
+}
+
+/* Fade-in Animation */
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
